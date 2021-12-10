@@ -14,6 +14,7 @@ const crimes = ["HARRASSMENT 2", "PETIT LARCENY", "DANGEROUS DRUGS", "ASSAULT 3 
   "FELONY ASSAULT"]
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
 function App() {
   const [crime, setCrime] = useState('')
   const [month, setMonth] = useState('')
@@ -25,6 +26,7 @@ function App() {
     Staten_Island: 0
   })
   const [res, setRes] = useState([])
+  const [flag, setFlag] = useState(0)
 
   const sortProperties = (obj) => {
     // convert object into array
@@ -53,6 +55,8 @@ function App() {
     }
     setOutput(crimeCF)
     setRes(sortProperties(output))
+    setFlag(1)
+
 
 
   }
@@ -94,7 +98,7 @@ function App() {
       </form>
       <div>
         {
-          res ? <Output cf={res} /> : <></>
+          flag ? <Output cf={res} /> : <></>
         }
       </div>
     </div>
