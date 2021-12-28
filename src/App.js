@@ -54,7 +54,7 @@ function App() {
       Staten_Island: s[crime][0].confidenceRates[0][month]
     }
     setOutput(crimeCF)
-    setRes(sortProperties(output))
+    setRes(sortProperties(crimeCF))
     setFlag(1)
 
 
